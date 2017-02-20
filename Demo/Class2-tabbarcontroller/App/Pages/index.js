@@ -27,32 +27,35 @@ export default class IndexPage extends Component{
                     selected={TabBarInfo.currentPage === 'home'}
                     renderIcon={() => <Image style={styles.tarBarImage} source={require('../Images/home.png')} />}
                     renderSelectedIcon={() => <Image style={styles.tarBarImage} source={require('../Images/home_active.png')} />}
-                    badgeText="1"
+                    badgeText={TabBarInfo.tabBarNoticeNum.home}
                     onPress={() => dispatch(actions.changTabVc('home'))}>
-                    {<HomePage />}
+                    {<HomePage dispatch = {dispatch}/>}
                 </TabNavigator.Item>
                 <TabNavigator.Item
                     selected={TabBarInfo.currentPage === 'read'}
                     renderIcon={() => <Image style={styles.tarBarImage} source={require('../Images/reading.png')} />}
                     renderSelectedIcon={() => <Image style={styles.tarBarImage} source={require('../Images/reading_active.png')} />}
+                    badgeText={TabBarInfo.tabBarNoticeNum.read}
                     onPress={() => dispatch(actions.changTabVc('read'))}>
-                    {<ReadPage />}
+                    {<ReadPage dispatch = {dispatch}/>}
                 </TabNavigator.Item>
 
                 <TabNavigator.Item
                     selected={TabBarInfo.currentPage === 'music'}
                     renderIcon={() => <Image style={styles.tarBarImage} source={require('../Images/music.png')} />}
                     renderSelectedIcon={() => <Image style={styles.tarBarImage} source={require('../Images/music_active.png')} />}
+                    badgeText={TabBarInfo.tabBarNoticeNum.music}
                     onPress={() => dispatch(actions.changTabVc('music'))}>
-                    {<MusicPage />}
+                    {<MusicPage dispatch = {dispatch}/>}
                 </TabNavigator.Item>
 
                 <TabNavigator.Item
                     selected={TabBarInfo.currentPage === 'movie'}
                     renderIcon={() => <Image style={styles.tarBarImage} source={require('../Images/movie.png')} />}
                     renderSelectedIcon={() => <Image style={styles.tarBarImage} source={require('../Images/movie_active.png')} />}
+                    badgeText={TabBarInfo.tabBarNoticeNum.movie}
                     onPress={() => dispatch(actions.changTabVc('movie'))}>
-                    {<MoviePage />}
+                    {<MoviePage dispatch = {dispatch}/>}
                 </TabNavigator.Item>
 
             </TabNavigator>
